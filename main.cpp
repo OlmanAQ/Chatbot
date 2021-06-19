@@ -14,7 +14,7 @@ void login(){
         // Texto del menú que se verá cada vez
         cout << "\n\n\t\t\tChatbot" << endl;
         cout << "\t\t\t----------------" << endl;
-        cout << "\n Hola usuario. Soy el Chatbot. ¿Dime que quieres que hacer? " << endl;
+        cout << "\n Hola usuario. Soy el Chatbot. ¿Dime que quieres hacer? " << endl;
         cout << "\n\n\t\t\tEstos son mis comandos" << endl;
         cout << "\tRealizar nuevo carrito de compras" << endl;
         cout << "\tModificar el carrito de compras" << endl;
