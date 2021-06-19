@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 void login(){
     int opcion;
 
@@ -29,19 +30,19 @@ void login(){
         case 1:
             //string admin;
             //admin=elegirAdmin()
-            menuAdmin();
+            //menuAdmin();
             break;
 
         case 2:
             //string profe;
             //elegirProfe();
-            menuProfe();
+            //menuProfe();
             break;
 
         case 3:
             //string estudiante;
             //elegirEstudiante();
-            menuEstudiante();
+            //menuEstudiante();
             break;
 
         case 0:
