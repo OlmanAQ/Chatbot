@@ -15,8 +15,9 @@ int precioPan;
 string postre;
 int precioPostre;
 int Total;
+int NumFac;
 
-void menuTamRef(){
+void menuTamRef(){    //Menu that receives user data and assigns it to their order
 
         cout << "\n\n\t\t\tEstos son los diferentes tamaños de refreco disponibles:" << endl;
         cout << "\t\t\t" << endl;
@@ -46,11 +47,11 @@ void menuTamRef(){
 
                 break;
 
-                default: cout << "Usted ha ingresado una opcion incorrecta";
+                default: cout << "Usted ha ingresado una opcion incorrecta";  //if the user enters an option that does not exist.
         }
 }
 
-void menuTamPiz(){
+void menuTamPiz(){    //receives the data provided by the user and assigns it to their order
 
         cout << "\n\n\t\t\tEstos son los diferentes tamaños de pizza disponibles:" << endl;
         cout << "\t\t\t" << endl;
@@ -80,11 +81,11 @@ void menuTamPiz(){
 
                 break;
 
-                default: cout << "Usted ha ingresado una opcion incorrecta";
+                default: cout << "Usted ha ingresado una opcion incorrecta";   //if the user enters an option that does not exist.
         }
 }
 
-void menuPanPiz(){
+void menuPanPiz(){     //Menu that receives user data and assigns it to their order
 
         cout << "\n\n\t\t\tEstos son los diferentes opciones para el pan de tu pizza:" << endl;
         cout << "\t\t\t" << endl;
@@ -125,11 +126,11 @@ void menuPanPiz(){
                          }
                 break;
 
-                default: cout << "Usted ha ingresado una opcion incorrecta";
+                default: cout << "Usted ha ingresado una opcion incorrecta";   //if the user enters an option that does not exist.
         }
 }
 
-void menuPostre(){
+void menuPostre(){    //menu that indicates the options to the user and assigns the value he chooses
 
         cout << "\n\n\t\t\tEstos son los diferentes opciones de postre que te ofrecemos:" << endl;
         cout << "\t\t\t" << endl;
@@ -170,13 +171,13 @@ void menuPostre(){
                          }
                 break;
 
-                default: cout << "Usted ha ingresado una opcion incorrecta";
+                default: cout << "Usted ha ingresado una opcion incorrecta";   //if the user enters an option that does not exist.
         }
 }
 
 
 
-void menuFresco(){
+void menuFresco(){  //This menu shows the user different ordering options.
 
         cout << "\n\n\t\t\tEstas son tus diferentes opciones:" << endl;
         cout << "\t\t\t" << endl;
@@ -188,7 +189,7 @@ void menuFresco(){
 
 }
 
-void menuPizza(){
+void menuPizza(){    //This menu shows the user different ordering options.
 
         cout << "\n\n\t\t\tEstas son tus diferentes opciones:" << endl;
         cout << "\t\t\t" << endl;
@@ -200,19 +201,18 @@ void menuPizza(){
 
 }
 
-void suma(){
+void suma(){        //function that carries the sum of everything the user orders
     Total = precioPizza + precioFresco + precioPan + precioPostre;
 }
 
-void cancelar(){
+void cancelar(){    //this function cancels the orders and returns the empty data
     precioPizza = NULL;
     precioFresco = NULL;
     precioPan = NULL;
     precioPostre = NULL;
 }
 
-void menu(){
- // Texto del menú que se verá cada vez
+void menu(){        //This is the main menu that guides the user and presents all the options it has.
         cout << "\n\n\t\t\tChatbot" << endl;
         cout << "\t\t\t-------" << endl;
         cout << "\n Hola bienvenido a Pizzeria Potasio. Yo sere tu guia. " << endl;
@@ -256,11 +256,12 @@ void menu(){
                  menuPostre();
                  suma();
 
-                 cout << "\n\n\t\t\t Ya terminaste tu pedido " << nombreCliente << " para solicitar tu factura ingresa la opción 3, oh si quieres cancelarla elige la opción 4" <<endl;
+                 cout << "Ya terminaste tu pedido " << nombreCliente << " para solicitar tu factura ingresa la opción 3, oh si quieres cancelarla elige la opción 4" <<endl;
                  menu();
 
 
                 break;
+       //In this case, the user is offered the option to print their invoice.
         case 3: cout << "\n\n\t\t\t Hola " << nombreCliente << " A continuación te mostramos tu Factura:" <<endl;
                 cout << "\t\t\t------------" << endl;
                 cout << "\n\n\t\t\tCliente: " << nombreCliente <<endl;
