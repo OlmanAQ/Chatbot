@@ -210,11 +210,12 @@ void menuPizza(){
 
 }
 
+
 void menu(){
  // Texto del menú que se verá cada vez
         cout << "\n\n\t\t\tChatbot" << endl;
         cout << "\t\t\t------------" << endl;
-        cout << "\n Hola bienvenido a Pizzeria Potasio. Yo sere tu guia. Para inicar selecciona la opcion 1 y dinos tu nombre. " << endl;
+        cout << "\n Hola bienvenido a Pizzeria Potasio. Yo sere tu guia. " << endl;
         cout << "\n\n\t\t\tEstas son tus opciones:" << endl;
         cout << "\t\t\t" << endl;
         cout << "\t1. Ingresar nombre" << endl;
@@ -284,6 +285,7 @@ void menu(){
 
 int main()
 {
+cout << "\n\n\t\tHola usuario para iniciar selecciona la opcion 1 y dinos tu nombre" <<endl;
 menu();
 return 0;
 }
