@@ -14,6 +14,7 @@ string pan;
 int precioPan;
 string postre;
 int precioPostre;
+int Total;
 
 void menuTamRef(){
 
@@ -179,23 +180,12 @@ void menuFresco(){
 
         cout << "\n\n\t\t\tEstas son tus diferentes opciones:" << endl;
         cout << "\t\t\t" << endl;
-        cout << "\t CocaCola" << endl;
-        cout << "\t Fanta Naranja" << endl;
-        cout << "\t Fanta Colita" << endl;
-        cout << "\t Jugo de Naranja" << endl;
-        cout << "\t Te frio de limon" << endl;
+        cout << "\t Coca" << endl;
+        cout << "\t Fanta " << endl;
+        cout << "\t Pepsi" << endl;
+        cout << "\t Gyn" << endl;
+        cout << "\t Sarsa" << endl;
 
-}
-
-void menupostre(){
-
-        cout << "\n\n\t\t\tEstas son tus diferentes opciones de postres que te ofrecemos:" << endl;
-        cout << "\t\t\t" << endl;
-        cout << "\t Peperoni" << endl;
-        cout << "\t Suprema" << endl;
-        cout << "\t Jamon y queso" << endl;
-        cout << "\t Hawaiana" << endl;
-        cout << "\t Brazilena" << endl;
 }
 
 void menuPizza(){
@@ -204,17 +194,27 @@ void menuPizza(){
         cout << "\t\t\t" << endl;
         cout << "\t Peperoni" << endl;
         cout << "\t Suprema" << endl;
-        cout << "\t Jamon y queso" << endl;
+        cout << "\t Napolitana" << endl;
         cout << "\t Hawaiana" << endl;
         cout << "\t Brazilena" << endl;
 
 }
 
+void suma(){
+    Total = precioPizza + precioFresco + precioPan + precioPostre;
+}
+
+void cancelar(){
+    precioPizza = NULL;
+    precioFresco = NULL;
+    precioPan = NULL;
+    precioPostre = NULL;
+}
 
 void menu(){
  // Texto del menú que se verá cada vez
         cout << "\n\n\t\t\tChatbot" << endl;
-        cout << "\t\t\t------------" << endl;
+        cout << "\t\t\t-------" << endl;
         cout << "\n Hola bienvenido a Pizzeria Potasio. Yo sere tu guia. " << endl;
         cout << "\n\n\t\t\tEstas son tus opciones:" << endl;
         cout << "\t\t\t" << endl;
@@ -254,8 +254,9 @@ void menu(){
 
                  cout << "\n\n\t\t\tListo " << nombreCliente << " ya para terminar dinos que postre quieres ordenar";
                  menuPostre();
+                 suma();
 
-                 cout << "\n\n\t\t\t Ya terminaste tu pedido " << nombreCliente << " para solicitar tu factura ingresa la opción 3" <<endl;
+                 cout << "\n\n\t\t\t Ya terminaste tu pedido " << nombreCliente << " para solicitar tu factura ingresa la opción 3, oh si quieres cancelarla elige la opción 4" <<endl;
                  menu();
 
 
@@ -267,17 +268,20 @@ void menu(){
                 cout << "\n\n\t\t   Cantidad 		       Descripción 		Precio unitario           Subtotal" <<endl;
                 cout << "\n\n\t\t       1 " <<"\t\t\t"<<pizza<<"\t\t\t"<<precioPizza<<"\t\t\t\t"<<precioPizza <<endl;
                 cout << "\n\n\t\t       1 " <<"\t\t\t"<<fresco<<"\t\t\t"<<precioFresco<<"\t\t\t\t"<<precioFresco <<endl;
-                cout << "\n\n\t\t       1 " <<"\t\t\t"<<pan<<"\t\t\t"<<precioPan<<"\t\t\t\t"<<precioPan <<endl;
-                cout << "\n\n\t\t       1 " <<"\t\t\t"<<postre<<"\t\t\t"<<precioPostre<<"\t\t\t\t"<<precioPostre <<endl;
-                cout << "\n\n\t\t\t                                                                      Total: Suave"<<endl;
+                cout << "\n\n\t\t       1 " <<"\t\t\t"<<pan<<"\t\t"<<precioPan<<"\t\t\t\t"<<precioPan <<endl;
+                cout << "\n\n\t\t       1 " <<"\t\t\t"<<postre<<"\t\t"<<precioPostre<<"\t\t\t\t"<<precioPostre <<endl;
+                cout << "\n\n\t\t\t                                                                      Total: "<< Total <<endl;
 
         break;
 
-        case 4: cout << "Usted ha seleccionado la opcion 4";
+        case 4: cancelar();
+                cout << "\n\n\t" << nombreCliente << " tu factura ah sido cancelada, gracias por elegirnos" <<endl;
 
         break;
 
-        default: cout << "Usted ha ingresado una opcion incorrecta";
+        default: cout << "\n\n\tUsted ha ingresado una opcion incorrecta";
+                 cout << "\t\t\t" << endl;
+                 menu();
 }
 
 
